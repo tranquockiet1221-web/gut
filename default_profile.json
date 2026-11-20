@@ -1,0 +1,9 @@
+{
+  "name": "Default Profile",
+  "version": "1.0",
+  "enabled": true,
+  "parameters": {
+    "sensitivity": 1.0,
+    "smoothing": 0.5
+  }
+}
