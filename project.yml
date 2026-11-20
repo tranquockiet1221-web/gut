@@ -16,13 +16,16 @@ targets:
     platform: iOS
     deploymentTarget: "16.0"
     sources:
-      - path: LocalHub
-        excludes:
-          - "Resources/Mods/.gitkeep"
-      - path: LocalHub/Resources/Mods
-        type: folder
+      - path: .
+        includes:
+          - "*.swift"
+      - path: default_profile.json
+        buildPhase:
+          copyFiles:
+            destination: resources
+            subpath: Mods
     info:
-      path: LocalHub/Info.plist
+      path: Info.plist
       properties:
         CFBundleDisplayName: LocalHub
         UILaunchScreen: {}
@@ -35,6 +38,4 @@ targets:
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.personal.localhub
-        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
-        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
         CODE_SIGN_STYLE: Automatic
